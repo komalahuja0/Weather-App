@@ -12,6 +12,7 @@ app.get("/", (req, res) => {
         "Weather app running!")
 });
 app.use("/api/weather", weatherRoutes);
+const PORT = process.env.PORT || 5000;
 app.listen(5000, () => {
     console.log("Server is running on port 5000!")
 });
