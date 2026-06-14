@@ -26,7 +26,7 @@ function App() {
       setError("");
 
       const res = await axios.get(
-        `${API_URL}/${searchCity}`,
+        `${API_URL}/api/weather${searchCity}`,
       );
 
       setWeather(res.data);
@@ -41,7 +41,7 @@ function App() {
       console.log("Fetching forecast...");
 
       const forecastRes = await axios.get(
-        `${API_URL}/forecast/${searchCity}`,
+        `${API_URL}/api/weather/forecast/${searchCity}`,
       );
 
       console.log("Forecast success:", forecastRes.data);
@@ -74,7 +74,7 @@ function App() {
           const { latitude, longitude } = position.coords;
 
           const res = await axios.get(
-            `${API_URL}/location/current?lat=${latitude}&lon=${longitude}`,
+            `${API_URL}/api/weather/location/current?lat=${latitude}&lon=${longitude}`,
           );
 
           setWeather(res.data);
