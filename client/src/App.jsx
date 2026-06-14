@@ -26,7 +26,7 @@ function App() {
       setError("");
 
       const res = await axios.get(
-        `${API_URL}/api/weather${searchCity}`,
+        `${API_URL}/api/weather/${searchCity}`,
       );
 
       setWeather(res.data);
